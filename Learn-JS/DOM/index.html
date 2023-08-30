@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      *,
+      html,
+      body {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      }
+      .container {
+        border: 1px solid black;
+        padding: 50px;
+        text-align: center;
+        margin: 0 auto;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      .container h1{
+        margin-bottom: 30px;
+      }
+      .grid {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .grid-items {
+        margin-top: 20px;
+        width: 100%;
+        text-align: center;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+      }
+      .grid-items h3{
+        margin-bottom: 5px;
+
+      }
+      .form-box {
+        width: 100%;
+        height: 50px;
+        font-size: 22px;
+        text-align: center;
+      }
+      .form-box::-webkit-input-placeholder{
+        color: rgb(202, 202, 202);
+      }
+      #btn {
+        height: 35px;
+        margin-top: 25px;
+        width: 30%;
+        background-color: rgb(255, 225, 0);
+        border : none;
+        transition: all 0.2s ease;
+      }
+      #btn:hover{
+        transform:scale(1.03);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="heading">
+        <h1>Program Perhitungan Usia</h1>
+      </div>
+
+      <form action="">
+        <div class="grid">
+          <div class="grid-items">
+            <h3>Nama:</h3>
+            <input type="text" placeholder="contoh: 'Jamal'" class="form-box" id="name" />
+          </div>
+        </div>
+        <div class="grid">
+          <div class="grid-items">
+            <h3>Tahun Lahir</h3>
+            <input
+              type="number"
+              placeholder="contoh: 1945"
+              class="form-box"
+              id="age"
+            />
+          </div>
+        </div>
+        <button type="button" onclick="popup()" id="btn">Cek Usia</button>
+      </form>
+      <div class="result">
+        <h2 id="user-result"></h2>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

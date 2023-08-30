@@ -1,0 +1,68 @@
+*, html, body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+nav{
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 0 30px;
+}
+.menu-toogle{
+    flex-direction: column;
+    display: none;
+}
+.menu-toogle input{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    opacity: 0.8;
+}
+.menu-toogle span{
+    display: block;
+    height: 2px;
+    margin-top: 5px;
+    width: 20px;
+    background-color: aliceblue;
+}
+#header-list{
+    display: flex;
+    justify-content: space-around;
+}
+#header-list li{
+    list-style-type:none ;
+}
+#header-list li a{
+    text-decoration: none;
+    color: aliceblue;
+    margin-right: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+    .menu-toogle{
+        display: flex;
+        align-items: center;
+    }
+    #header-list{
+        flex: wrap;
+        position: absolute;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 100%;
+        z-index: -1;
+        align-items: center;
+        top: 0;
+        height: 80vh;
+        right: 0;
+        background-color: brown;
+        transition: all 0.4s ease;
+    }
+    nav ul.hidden{
+        transform: translateY(-100%);
+    }
+}
