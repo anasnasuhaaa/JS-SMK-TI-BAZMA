@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+    <script>
+        //     const introduce = `{"firstName": "Jamal",
+        //     "lastName": "Asep",
+        //     "age": 20,
+        //     "addres": "Bogor"
+        // }`
+        //     const converter = JSON.parse(introduce)
+        //     document.getElementById('demo').innerHTML = `${converter.firstName} ${converter.lastName}`
+        //     console.log(converter.firstName)
+        //     console.log(converter.lastName)
+        //     console.log(converter.age)
+
+        function arrayJSON() {
+            const abjad = '["a", "b", "c", "d"]';
+            const abjadConverter = JSON.parse(abjad);
+
+            for (let i = 0; i < abjadConverter.length; i++) {
+                console.log(abjadConverter[i]);
+            }
+        }
+        arrayJSON();
+
+        // JSON Stringify
+        function jsonStringify() {
+            const person = {
+                "firstName": "aden",
+                "lastName": "funny",
+                "age": 17,
+            };
+            const defaultJson = JSON.stringify(person);
+            console.log(defaultJson);
+            const spacerJson = JSON.stringify(person, null, 3);
+            console.log(spacerJson);
+            
+            const changeAgeJson = JSON.stringify(person, function (key, value) {
+                if (key === "age" && value === 17) {
+                    return 20;
+                }
+                return value;
+            }, 3);
+            console.log(changeAgeJson);
+        }
+        jsonStringify();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Mencari ID -->
+    <h1 id="heading">Ini adalah h1</h1>
+    <p id="paragraf">Ini adalah paragraf dari body</p>
+    <p class="text-paragraf"></p>
+    <p name="name-paragraf"></p>
+    <script>
+      // gerElementById
+      document.getElementById("paragraf").innerHTML =
+        "Ini telah dimanipulasi oleh javascript";
+      document.querySelector("#heading").innerHTML =
+        "h1 telah dimaipulasi oleh javascript";
+
+      // getElementByClassName
+      const textParagraf = document.getElementsByClassName("text-paragraf");
+      for (let i = 0; i < textParagraf.length; i++) {
+        textParagraf[i].innerHTML = "ini adaldh getElementByClass";
+      }
+      const nameParagraf = document.getElementsByName("name-paragraf");
+      for (let j = 0; j < nameParagraf.length; j++) {
+        nameParagraf[j].innerHTML =
+          "Ini adalah mengambil element bedasarkan name";
+      }
+    </script>
+    <form action="" name="form" onsubmit="formValidation()" autocomplete="off">
+      <label for="name"> Nama Anda</label>
+      <input
+        type="text"
+        id="name"
+        placeholder="Masukan nama anda"
+        name="name"
+      />
+      <label for="age"> Umur Anda</label>
+      <input
+        type="number"
+        id="age"
+        placeholder="Masukan usia anda"
+        name="age"
+      />
+      <button type="submit">Send Data</button>\
+      <script>
+        function formValidation() {
+          let name = document.forms["form"]["name"].value;
+          let age = document.forms["form"]["age"].value;
+          if (name == "" && age == "") {
+            alert("Nama dan Umur tidak boleh kosong");
+          }
+          if (name == "") {
+            alert("Nama harus terisi");
+          }
+          if (age == "") {
+            alert("Umur tidak boleh dikosongkan");
+          }
+        }
+      </script>
+    </form>
+  </body>
+</html>

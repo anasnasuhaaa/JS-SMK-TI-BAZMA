@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function customOperator(num, num2, operator) {
+        if (operator === "tambah") {
+          return num + num2;
+        } else if (operator === "kurang") {
+          return num - num2;
+        } else if (operator === "kali") {
+          return num * num2;
+        } else if (operator === "bagi") {
+          return num / num2;
+        } else if (operator === "pangkat") {
+          return num ** num2;
+        } else {
+          console.log("operator tidak dikenali");
+          return;
+        }
+      }
+      console.log(customOperator(2, 3, "tambah"));
+      console.log(customOperator(2, 3, "kurang"));
+      console.log(customOperator(2, 3, "kali"));
+      console.log(customOperator(2, 3, "bagi"));
+
+      // no2
+      let arrFriends = [];
+
+      function arrFuncFriends(arr) {
+        arrFriends = arr;
+      }
+      arrFuncFriends(["a", "b", "c"]);
+      console.log(arrFriends);
+      arrFuncFriends(["r", "s", "t"]);
+      console.log(arrFriends.reverse());
+   
+
+      // No 3
+      function switchOperator(number, number2, arg) {
+        switch (arg) {
+          case "+":
+            return number + number2;
+            break;
+          case "-":
+            return number - number2;
+            break;
+          case "*":
+            return number * number2;
+            break;
+          case "/":
+            return number / number2;
+            break;
+          default:
+            console.log("Operator tidak valid");
+            break;
+        }
+      }
+      console.log(switchOperator(8, 3, "+"));
+      console.log(switchOperator(10, 2, "-"));
+      console.log(switchOperator(4, 6, "*"));
+      console.log(switchOperator(15, 3, "/"));
+      console.log(switchOperator(7, 2, "%"));
+
+      // no 4
+
+      function billGanjil() {
+        let ganjil = [];
+        for (let i = 2; i <= 20; i += 2) {
+          ganjil.push(i);
+        }
+        console.log(ganjil);
+      }
+      billGanjil();
+    </script>
+  </body>
+</html>
